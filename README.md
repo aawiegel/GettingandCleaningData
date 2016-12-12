@@ -5,7 +5,7 @@ Contains a script to analyze data from the UCI Machine Learning repository on ph
 Files included are below:
 
 run_analysis.R
-Script to analyze data and write to a new file.
+Script to analyze data and write to a new file. The script assumes that the raw data from UCI is available in its directory and the "test" and "train" subdirectories.
 
 data_summary.txt
 Output from the script that includes means of the magnitudes of the accelerometer data for different subjects and activities. Use the command read.table("data_summary.txt") to load into an R console.
