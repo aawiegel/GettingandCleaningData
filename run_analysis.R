@@ -51,17 +51,15 @@ load_data <- function(directory) {
 
 clean_data <- rbind(load_data("test"), load_data("train"))
 
-# Find mean for subject and activity
+# Find mean for activity of each subject
 
-subject_means <- aggregate(clean_data[,-1], clean_data["Subject"], mean)
-subject_means$Activity <- "N/A"
-activity_means <- aggregate(clean_data[,-2], clean_data["Activity"], mean)
-activity_means$Subject <- "N/A"
+measurement_means <- aggregate(clean_data[,-c(1,2)], by = list(clean_data$Subject, clean_data$Activity), mean)
 
-# Combine data sets together
-combined_data <- rbind(subject_means, activity_means)
+# Change column names back to Subject and Activity
+
+names(measurement_means)[1:2] <- c("Subject", "Activity")
 
 # Write data table to a file
 
-write.table(combined_data, file="data_summary.txt")
+write.table(measurement_means, file="data_summary.txt", row.name=FALSE)
 
