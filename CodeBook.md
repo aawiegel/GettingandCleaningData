@@ -4,9 +4,9 @@ The original data was subset to only include the time domain versions of the mea
 
 # Variable names
 
-Subject: indicates subject number or N/A if not applicable
+Subject: indicates subject number
 
-Activity: indicates the activity description or N/A if not applicable
+Activity: indicates the activity description
 
 Body_Acceleration: mean of the body acceleration for that subject or activity
 
